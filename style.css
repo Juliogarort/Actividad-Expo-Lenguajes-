@@ -1,0 +1,163 @@
+body {
+    background-image: url(fondo.jpg);
+ }
+ header{
+    grid-area: titulo;
+    border-bottom: 5px solid gray;
+    text-align: center;
+    font-size: 1.8em;
+    background-color: #223A5E;
+    color: aliceblue;
+    font-variant:all-small-caps;
+    font-weight: bold;
+    padding: 20px;
+    span{
+        font-size:  0.75em; ;
+    }
+ }
+ header::first-letter {
+    font-size: 1.5em;
+ }
+ h1{
+    color: brown;
+    border-bottom: solid brown;
+
+ }
+ #destacados{
+   font-style:italic ;
+   border-bottom: none;
+   font-size: 1.2em;
+ }
+
+ 
+ #contenedor_grande{
+    display: grid;
+    grid-template-areas: 
+    "titulo"
+    "intro"
+    "arquitectura"
+    "pabellones"
+    "pabellones_dest"
+    "seguridad"
+    "footer";
+ }
+ #titulo{
+    grid-area: titulo;
+ }
+ #intro{
+    grid-area: intro;
+ }
+ #arquitectura{
+    grid-area: arquitectura;
+ }
+ #pabellones{
+    grid-area: pabellones;
+ }
+ #seguridad{
+    grid-area: seguridad;
+ }
+ 
+ .table-container {
+   display: flex;
+   justify-content: center;
+   width: 100%;
+}
+
+table {
+   border-collapse: collapse;
+   align-items: center;
+}
+
+th,td {
+   text-align: center;
+   border: 0.1px solid rgba(114, 114, 114, 0.116);
+   padding: 10px;
+   text-align: left;
+}
+th {
+   text-align: center;
+   background-color: #223A5E;
+   color: white;
+}
+tr:nth-child(even) {
+   background-color: #D49F75;
+}
+tr:nth-child(odd) {
+   background-color: #C48F65;
+}
+
+ footer {
+   grid-area: footer;
+   padding: 1em 0 1em 0;
+   text-align: center;
+   color: white;
+   background-color: #223A5E;
+   border-top: 5px solid gray;
+}
+a{
+   color: #F6D155;
+}
+
+img {
+   border: 3px solid gray;
+   margin-top: 10px;
+}
+
+figure {
+   text-align: center;
+}
+
+#flex {
+   display: flex;
+   flex-flow: row;
+}
+
+#flex img {
+   width: 15vw;
+}
+
+#menu {
+   grid-area: indice;
+   background-color: #223A5E;
+   color: white;
+   margin: 2em 0 2em 0;
+}
+
+@media screen and (min-width: 768px) {
+   #contenedor_grande {
+       grid-template-columns: repeat(3, 1fr);
+       grid-template-areas:
+           "titulo titulo titulo "
+           "indice intro intro "
+           "sidebar1 arquitectura arquitectura "
+           "sidebar1 pabellones pabellones "
+           "sidebar1 pabellones_dest pabellones_dest "
+           "sidebar1 seguridad seguridad "
+           "footer footer footer ";
+           margin-top: -200px;
+           margin-right: 15%;
+           text-align: justify;
+   }
+  
+   #menu {
+
+       width: 17vw;
+       height: fit-content;
+       padding: 1px;
+   }
+
+
+
+
+   #flex {
+       display: flex;
+       flex-direction: row;
+       justify-content: center;
+       align-items: center;
+   }
+
+   #flex img {
+       max-width: 100%;
+   }
+  
+}
